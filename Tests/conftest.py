@@ -29,7 +29,9 @@ def login(init_driver):
     # Perform login actions using the LoginPage class
     sleep(4)
     login_page = LoginPage(init_driver)
-    login_page.do_login("0729208685", "Test123")
+    login_page.do_login("0735638271", "2020")
+    yield
+    login_page.logout()
 
 
 def pytest_addoption(parser):
