@@ -56,3 +56,16 @@ class BasePage:
             count = self.driver.find_elements(by=By.ID, value=configReader.readconfig("locators", locator))
         
         return count
+
+    def scroll_to_the_bottom(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    
+    
+    def clear_textbox(self, locator):
+        if str(locator).endswith("_XPATH"):
+            self.driver.find_element(by=By.XPATH, value=configReader.readconfig("locators", locator)).clear()
+        elif str(locator).endswith("_ACCESSIBILITYID"):
+            self.driver.find_element(by=By.ACCESSIBILITY_ID, value=configReader.readconfig("locators",
+                                                                                                        locator)).clear()
+        elif str(locator).endswith("_ID"):
+            self.driver.find_element(by=By.ID, value=configReader.readconfig("locators", locator)).clear()

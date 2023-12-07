@@ -7,8 +7,11 @@ name = "pypi"
 pandas = "*"
 openpyxl = "*"
 allure-pytest = "*"
+pytest-xdist = "*"
+pytest-html = "*"
+pytest = "==7.1.0"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.11"

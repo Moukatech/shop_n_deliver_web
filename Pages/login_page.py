@@ -22,5 +22,10 @@ class LoginPage(BasePage):
         assert element_text==expected_error_message
     
     def capture_screen_shot(self,file_name):
-        
         self.take_screenshot(file_name)
+        
+    def logout(self):
+        self.click_element("side_humbager_XPATH")
+        self.scroll_to_the_bottom()
+        sleep(3)
+        self.click_element("logout_button_XPATH")

@@ -1,13 +1,5 @@
-# import pandas as pd
-# import os
-
-# file_path = os.path.join(os.path.dirname(__file__),'users.xlsx')
-
-# df = pd.read_excel(file_path)
-# data_list = df.to_dict(orient='records')
-# User = data_list[0]["phone_number"]
-# Pass = data_list[0]["Password"]
-# print(User, Pass)
+import pandas as pd
+import os
 import random
 import string
 
@@ -25,7 +17,12 @@ def generate_phone_number_and_password():
     
     return mobile_num, password_string
     
+def get_login_data():
+    file_path = os.path.join(os.path.dirname(__file__),'..','users.xlsx')
+
+    df = pd.read_excel(file_path)
+    data_list = df.to_dict(orient='records')
+    User = data_list[0]["phone_number"]
+    Pass = data_list[0]["Password"]
+    return User, Pass
     
-phone_num, password = generate_phone_number_and_password()
-print(phone_num)
-print(password)
