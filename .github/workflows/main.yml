@@ -33,6 +33,8 @@ jobs:
         uses: browser-actions/setup-chrome@v1
       - name: Setup Firefox
         uses: browser-actions/setup-firefox@v1.4.0
+      - name: setup-chromedriver
+        uses: nanasess/setup-chromedriver@v2.2.1
       
       - name: Running functional Tests
         run: |
