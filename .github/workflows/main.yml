@@ -25,6 +25,11 @@ jobs:
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+      - name: Setup Firefox
+        uses: browser-actions/setup-firefox@v1.4.0
+      
       - name: Running functional Tests
         run: |
           pytest Tests/
