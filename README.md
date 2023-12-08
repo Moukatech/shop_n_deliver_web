@@ -60,7 +60,7 @@ These are instructions for a user with a mac device.
    ```
 5. To run the tests:
    ```sh
-   pytest --alluredir=allure_report/ Tests/  
+   pytest --alluredir=allure_report/ Tests/   
    ```
 6. To be able to view the test results:
    ```sh

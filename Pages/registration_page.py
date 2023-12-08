@@ -14,9 +14,11 @@ class RegistrationPage(BasePage):
         self.click_element("TERMS_checkbox_XPATH")
         self.click_element("register_button_XPATH")
         sleep(3)
+        # element_text= self.get_element_Text("notification_message_XPATH")
+        # assert element_text == expeected_success_message
     
-    def assert_correct_error_message(self, expected_error_message):
-        element_text=self.get_element_Text("invalid_phone_num_error_message_XPATH")
+    def assert_correct_notification_message(self, expected_error_message):
+        element_text=self.get_element_Text("notification_message_XPATH")
         assert element_text==expected_error_message
     
     def capture_screen_shot(self,file_name):

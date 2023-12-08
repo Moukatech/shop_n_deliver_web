@@ -33,3 +33,6 @@ class BetPlacementPage(BasePage):
         self.send_values("input_bet_amount_XPATH",amount)
         self.click_element("place_bet_button_XPATH")
         
+    def assert_correct_notification_message(self, expected_message):
+        element_text=self.get_element_Text("notification_message_XPATH")
+        assert element_text==expected_message

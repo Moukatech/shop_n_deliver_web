@@ -17,9 +17,9 @@ class LoginPage(BasePage):
         self.click_element("login_button_XPATH")
         sleep(3)
         
-    def assert_correct_error(self, expected_error_message):
-        element_text=self.get_element_Text("login_error_message_XPATH")
-        assert element_text==expected_error_message
+    def assert_correct_notification_message(self, expected_message):
+        element_text=self.get_element_Text("notification_message_XPATH")
+        assert element_text==expected_message
     
     def capture_screen_shot(self,file_name):
         self.take_screenshot(file_name)
