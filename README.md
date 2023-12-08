@@ -21,6 +21,8 @@ The purpose of this project is to showcase how to create a test automation frame
 * Python.
 * Pytest.
 * Allure reporting template.
+* Panda - for reading excel data.
+* pytest-xdist- to run tests in parallel
 
 ## Getting Started
 
@@ -49,23 +51,34 @@ These are instructions for a user with a mac device.
    ```sh
     cd shop_N_deliver_web
    ```
-4. Install pipenv to create a virtual enviroment and activate it:
+4. Install pipenv to create a virtual environment and activate it:
    ```sh
    pip install pipenv
    pipenv shell 
    ```
 4. Install the required packages from the `requirements.txt` file:
    ```sh
-   pip install -r requirements.txt
+   pipenv install -r requirements.txt
    ```
-5. To run the tests:
+5. To run the tests and generate a report:
    ```sh
    pytest --alluredir=allure_report/ Tests/   
    ```
+   -- Currently, I have noticed an error that pytest throws when any parameter is passed. "ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]"
 6. To be able to view the test results:
    ```sh
     allure serve allure_report/ 
    ```
+7. To run on Different Browsers
+   ```sh
+     pytest --browser firefox or pytest --browser chrome
+   ```
+8. To run tests in parallel:
+   ```sh
+     pytest -n 3
+   ```
+9. For CI I used github actions for running the tests.
+    - check in the actions tab or in the repo .github/workflows for the yml file that runs the tests.
 
  ## Example of how the final report should look like.
  ![Allure report Screen Shot][Report_Screenshot]

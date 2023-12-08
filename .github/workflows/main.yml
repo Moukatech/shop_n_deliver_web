@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3  # Set up Python environment
         with:
-          python-version: 3.11  
+          python-version: 3.11.6
 
       - name: Install python dependencies
         run: |
@@ -25,8 +25,14 @@ jobs:
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+      - name: Setup Firefox
+        uses: browser-actions/setup-firefox@v1.4.0
+      
       - name: Running functional Tests
         run: |
-          pytest --alluredir=report_data/ tests/
-          allure generate 
-          cp ./allure-report/index.html ./
+          pytest Tests/
+          # --alluredir=report_data/ tests/
+          # allure generate 
+          # cp ./allure-report/index.html ./
