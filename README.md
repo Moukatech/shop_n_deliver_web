@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/Moukatech/API_Automation">
+  <a href="https://github.com/Moukatech/shop_n_deliver_web">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
