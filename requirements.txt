@@ -1,7 +1,5 @@
-allure-pytest==2.13.2
-allure-python-commons==2.13.2
+
 pytest==7.4.3
-pytest-allure-adaptor==1.7.10
 pytest-html==4.1.1
 pytest-xdist==3.5.0
 python-dateutil==2.8.2
