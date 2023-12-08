@@ -9,13 +9,16 @@ from time import sleep
 class TestBetting:
 
     
-    # def test_verify_user_can_place_bets(self):
-        
-    #     betting = BetPlacementPage(self.driver)
-    #     betting.select_odds()
+    def test_verify_user_can_place_bets(self,login):
+        login
+        betting = BetPlacementPage(self.driver)
+        betting.select_odds()
+        betting.place_bet(10)
+        betting.assert_correct_notification_message("Your bet is being processed. Kindly check your notifications shortly")
+        betting.capture_screen_shot("success_bet.png")
     
-    def test_verify_user_can_share_betslip(self):
-        
+    def test_verify_user_can_share_betslip(self,login):
+        login
         betting = BetPlacementPage(self.driver)
         sleep(3)
         betting.select_odds()

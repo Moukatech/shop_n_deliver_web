@@ -31,5 +31,5 @@ class Testlogin:
     def test_invalid_login(self):
         login = LoginPage(self.driver)
         login.do_login("0729208685","Testssfd2")
-        login.assert_correct_error("The mobile and password provided do not match")
+        login.assert_correct_notification_message("The mobile and password provided do not match")
         login.capture_screen_shot("loginError.png")

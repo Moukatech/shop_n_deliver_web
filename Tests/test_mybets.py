@@ -15,14 +15,18 @@ class TestMyBets:
         
         bets = MyBetsPage(self.driver)
         bets.Rebet(10)
+        bets.assert_correct_notification_message("Bets successfully added to betslip")
+        bets.capture_screen_shot("rebet.png")
     
     
     def test_user_is_able_to_cancel_bet(self,login):
         login
         bets = MyBetsPage(self.driver)
         bets.Cancel_bet()
+        bets.capture_screen_shot("cancle_bet.png")
     
     def test_user_is_able_to_cashout(self,login):
         login
         bets = MyBetsPage(self.driver)
         bets.cashout_bet()
+        bets.capture_screen_shot("cashout_bet.png")
