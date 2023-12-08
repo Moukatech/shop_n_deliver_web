@@ -19,6 +19,7 @@ class Testlogin:
         
         login = LoginPage(self.driver)
         login.do_login(mobile_num,password)
+        login.logout()
     
     def test_multiple_accounts_login(self):
         login = LoginPage(self.driver)
@@ -27,6 +28,7 @@ class Testlogin:
             User = i.phone_number
             Pass = i.Password
             login.do_login(User, Pass)
+            login.logout()
     
     def test_invalid_login(self):
         login = LoginPage(self.driver)

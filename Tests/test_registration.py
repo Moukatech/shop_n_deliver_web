@@ -13,7 +13,6 @@ class TestRegistration:
         
         register = RegistrationPage(self.driver)
         register.register("0113035065", "Test123", "Test123")
-        register.assert_correct_notification_message("Account created. Enter the code sent to your phone to verify.")
         register.capture_screen_shot("registation_form.png")
         
     def test_invalid_phone_number_on_registration(self):

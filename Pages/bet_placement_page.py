@@ -23,15 +23,22 @@ class BetPlacementPage(BasePage):
         sleep(1)
         
         
+        
     def capture_screen_shot(self,file_name):
         self.take_screenshot(file_name)
-        sleep(1)
+        sleep(1)    
+    
+    def close_popup(self):
         self.click_element("close_share_popup_XPATH")
         
-    def place_bet(self,amount):
+    def place_bet(self,amount,file_name):
         self.clear_textbox("input_bet_amount_XPATH")
         self.send_values("input_bet_amount_XPATH",amount)
         self.click_element("place_bet_button_XPATH")
+        element= len(self.CountElementsOnPage("notification_popup_XPATH"))
+        assert element>0
+        sleep(2)
+        
         
     def assert_correct_notification_message(self, expected_message):
         element_text=self.get_element_Text("notification_message_XPATH")
