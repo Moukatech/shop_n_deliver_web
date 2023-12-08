@@ -38,7 +38,7 @@ jobs:
       
       - name: Running functional Tests
         run: |
-          pytest --headless Tests/
+          pytest Tests/
           # --alluredir=report_data/ tests/
           # allure generate 
           # cp ./allure-report/index.html ./
