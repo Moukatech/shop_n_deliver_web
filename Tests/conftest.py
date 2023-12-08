@@ -2,16 +2,32 @@ import pytest
 from selenium import webdriver
 from Pages.login_page import LoginPage
 from time import sleep
+from selenium.webdriver.chrome.options import Options
 BASE_URL= "https://www.betika.com/en-ke/"
 
 # used to initiate the browser
+# def pytest_setup_options():
+#     chrome_options = Options()
+    
+#     # Read the headless option from pytest.ini
+#     headless_option = pytest.config.getini('addopts').count('--headless') > 0
+    
+#     if headless_option:
+#         chrome_options.add_argument('--headless')
+    
+#     return chrome_options
+
+
 @pytest.fixture(scope='class')
 def init_driver(request):
+    options = Options()
+    options.add_argument('--headless=new')
+    # chrome_options = pytest_setup_options()
     browser_name = request.config.getoption("--browser-type", default="chrome")
 
     # Initialize the WebDriver based on the chosen browser
     if browser_name == "chrome":
-        web_driver = webdriver.Chrome()
+        web_driver = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
         web_driver = webdriver.Firefox()
     else:
