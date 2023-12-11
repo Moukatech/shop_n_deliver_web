@@ -31,7 +31,7 @@ class BetPlacementPage(BasePage):
     def close_popup(self):
         self.click_element("close_share_popup_XPATH")
         
-    def place_bet(self,amount,file_name):
+    def place_bet(self,amount):
         self.clear_textbox("input_bet_amount_XPATH")
         self.send_values("input_bet_amount_XPATH",amount)
         self.click_element("place_bet_button_XPATH")
