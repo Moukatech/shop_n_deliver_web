@@ -23,6 +23,7 @@ class MyBetsPage(BasePage):
         self.click_element("place_bet_button_XPATH")
         element= len(self.CountElementsOnPage("notification_popup_XPATH"))
         assert element>0
+        sleep(1)
     
     def Cancel_bet(self):
         self.select_bet_slip()

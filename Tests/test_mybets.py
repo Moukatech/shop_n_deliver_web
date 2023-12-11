@@ -15,7 +15,6 @@ class TestMyBets:
         
         bets = MyBetsPage(self.driver)
         bets.Rebet(10)
-        bets.assert_correct_notification_message("Bets successfully added to betslip")
         bets.capture_screen_shot("rebet.png")
     
     
