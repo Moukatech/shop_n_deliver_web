@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/Moukatech/API_Automation">
+  <a href="https://github.com/Moukatech/shop_n_deliver_web">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -62,22 +62,24 @@ These are instructions for a user with a mac device.
    ```
 5. To run the tests and generate a report:
    ```sh
-   pytest --alluredir=allure_report/ Tests/   
+   pytest Tests/   
    ```
-   -- Currently, I have noticed an error that pytest throws when any parameter is passed. "ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]"
-6. To be able to view the test results:
+   -- Currently, I have noticed an error that pytest throws when the allure parameter is passed. "ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]"
+   pytest --alluredir=allure_report/ Tests/
+   -- is not working for now, still working on a solution for this
+7. To be able to view the test results: 
    ```sh
     allure serve allure_report/ 
    ```
-7. To run on Different Browsers
+8. To run on Different Browsers
    ```sh
      pytest --browser firefox or pytest --browser chrome
    ```
-8. To run tests in parallel:
+9. To run tests in parallel:
    ```sh
      pytest -n 3
    ```
-9. For CI I used github actions for running the tests.
+10. For CI I used github actions for running the tests.
     - check in the actions tab or in the repo .github/workflows for the yml file that runs the tests.
 
  ## Example of how the final report should look like.
